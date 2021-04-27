@@ -40,6 +40,7 @@ export default function App() {
           <label>Country Code</label>
           <input
             ref={ref}
+            type="tel"
             className="cc"
             name="cc"
             placeholder="enter the country code"
@@ -52,6 +53,7 @@ export default function App() {
           <label>Phone Number</label>
           <input
             className="number"
+            type="tel"
             name="number"
             placeholder="enter the number"
             maxLength="20"
