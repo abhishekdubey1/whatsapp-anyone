@@ -30,6 +30,9 @@ label {
 .error {
   color: #d8000c;
   background-color: #ffbaba;
+  line-height: 25px;
+  padding-left: 10px;
+
 }
 .message {
   display: flex;
