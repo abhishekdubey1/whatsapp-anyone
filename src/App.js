@@ -16,8 +16,18 @@ export default function App() {
     setState({ ...state, [target.name]: target.value });
   function handleError() {
     if (number.trim() && cc.trim()) {
-      if (!parseInt(number, 10) || !parseInt(cc, 10)) {
-        return "Number and Country to be a integer";
+      if (
+        !parseInt(number, 10) ||
+        !parseInt(cc, 10) ||
+        cc.includes("+") ||
+        number.includes("+")
+      ) {
+        return (
+          <span>
+            Number and Country Code to be a integer and
+            <br /> Do not add a '+' in Country Code
+          </span>
+        );
       } else {
         return "";
       }
@@ -43,7 +53,7 @@ export default function App() {
             type="tel"
             className="cc"
             name="cc"
-            placeholder="enter the country code"
+            placeholder="91"
             maxLength="6"
             value={cc}
             onChange={handleInpChange}
@@ -55,7 +65,7 @@ export default function App() {
             className="number"
             type="tel"
             name="number"
-            placeholder="enter the number"
+            placeholder="8922114455"
             maxLength="20"
             value={number}
             onChange={handleInpChange}
